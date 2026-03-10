@@ -1,13 +1,13 @@
 package com.stu.helloserver;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@SpringBootApplication
-public class HelloServerApplication {
+@RestController
+public class HelloController {
 
-    public static void main(String[] args) {
-        SpringApplication.run(HelloServerApplication.class, args);
+    @GetMapping("/hello")
+    public String sayHello() {
+        return "Hello Spring Boot!";
     }
-
 }
